@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link href="~/assests/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+<link href="~/Content/to-do-list.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+            <div id="olContainer" class="container">
+                <div class="col-md-12">
+                    <h2>User To Do List</h2>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">Title</label>
+                            <input id="txt_todo_title" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">Priority</label>
+                            <select id="todo_priority_list" class="form-control">
+                                <option value="-1">Select</option>
+                                <option value="1">High</option>
+                                <option value="2">Medium</option>
+                                <option value="3">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Date</label>
+                            <div class="input-group">
+                                <input id="todo_date" type="text" class="form-control">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="control-label">&nbsp;</label>
+                        <button id="btnAddToDoList" class="btn btn-default" onclick="ToDoList.addToList();" value="Add to List">
+                            Add
+                        </button>
+                    </div>
+                </div>
+                <div id="main_ol_div" class="col-md-12">
+                    <ol id="toDoList"> </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/assests/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="~/Scripts/to-do-list.js"></script>

@@ -1,0 +1,45 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
+
+#olContainer {
+    font: normal normal 13px/16px "Open Sans", sans-serif;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: #f5f5f5;
+    border-radius: 5px;
+}
+
+form {
+    display: inline-block;
+}
+
+input {
+    padding: 4px 15px 4px 5px;
+}
+/* Set ol list-style-type none because it uses custom ordering */
+#toDoList {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+    #toDoList li {
+        padding: 5px;
+        color: #000;
+        background-color: #7af3f0;
+    }
+
+        #toDoList li:nth-child(even) {
+            background: #7ae6f3;
+        }
+
+.strike {
+    text-decoration: line-through;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+#main_ol_div {
+    margin-top: 64px;
+}
