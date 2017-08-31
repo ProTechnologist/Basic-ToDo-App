@@ -61,6 +61,19 @@
                 }
                 else {
                     $('#toDoList').empty();
+
+                    // adding headers to the dynamic table
+                    $('#toDoList').append('<li>'
+                     + '<div class="form-group col-md-12"> '
+                      + '<div class="col-md-1"><label id="lbl_order" class="pull-left">ID</label></div> '
+                         + '<div class="col-md-4"><label id="lbl_title" class="pull-left">Title</label></div> '
+                         + '<div class="col-md-3"><label class="pull-right">Date</label></div> '
+                           + '<div class="col-md-3"><label class="pull-right">Priority</label></div> '
+                          + '<div class="col-md-1"><label class=pull-right">Actions</label></div> '
+                       + '</div> '
+                  + '</li>');
+
+                    // adding data to the dynamic table
                     $.each(response.data, function (key, value) {
                         $('#toDoList').append('<li value='+value.Id+'>'
                        + '<div class="form-group col-md-12"> '
@@ -116,6 +129,9 @@
 
     //Deleting ToDo from List
     var handleRemoveFromList = function (el) {
+
+        if (!confirm('Are you sure you want to remove this ToDo item?')) { return false; }
+
         debugger;
         var id = $(el).closest('li').attr('value');
         $.ajax({

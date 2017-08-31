@@ -113,7 +113,7 @@ namespace ToDoApp.Controllers
                         if (data != null)
                         {
                             data.order = order++;
-                            et.tbl_todo_list.Add(data);
+                            //et.tbl_todo_list.Add(data);
                             et.SaveChanges();
                         }
                     }
